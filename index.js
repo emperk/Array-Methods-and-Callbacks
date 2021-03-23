@@ -73,7 +73,7 @@ function getFinals(data) {
     return allFinals;
 }
 
-console.log("Task 2: ", getFinals(fifaData));
+// console.log("Task 2: ", getFinals(fifaData));
 
 
 
@@ -83,11 +83,13 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-    /* code here */
+function getYears(data, getFinalsCB) {
+    return getFinalsCB(data).map(function(item){
+        return item.Year;
+    })
 }
 
-
+console.log("TASK 3: ", getYears(fifaData, getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
@@ -117,15 +119,16 @@ hint: the strings returned need to exactly match the string in step 4.
 
 //can also solve with arrow functions
 
-function getWinnersByYear(/*data, getYearsCB, getWinnersCB*/) {
-    // const winners = getWinnersCB(data, getFinals);
-    // const years = getYearsCB(data, getFinals);
+function getWinnersByYear(data, getYearsCB, getWinnersCB) {
+    const winners = getWinnersCB(data, getFinals);
+    const years = getYearsCB(data, getFinals);
 
-    // return winners.map(function(item, index){
-    //     return `In ${years[index]}, ${item} won the world cup!`;
-    // })
+    return winners.map(function(item, index){
+        return `In ${years[index]}, ${item} won the world cup!`;
+    })
 }
 
+console.log("TASK 5: ", getWinnersByYear(fifaData, getYears, getWinners));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
