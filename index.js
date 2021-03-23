@@ -33,21 +33,27 @@ const fifaYear2014Filter = fifaData.filter(function(item){
     return item.Year === 2014 && item.Stage === "Final";
 });
 
-// console.log("FIFA DATA 2014 FILTER: ", fifaYear2014Filter);
+console.log("FIFA DATA 2014 FILTER: ", fifaYear2014Filter);
 
 //(a) Home Team name for 2014 world cup final
 
-console.log('task 1 a', fifaYear2014Filter[0]['Home Team Name']);
+console.log('task 1 a: ', fifaYear2014Filter[0]['Home Team Name']);
 
 //(b) Away Team name for 2014 world cup final
 
-
+console.log('task 1 b: ', fifaYear2014Filter[0]['Away Team Name']);
 
 //(c) Home Team goals for 2014 world cup final
 
+console.log('task 1 c: ', fifaYear2014Filter[0]['Home Team Goals'])
+
 //(d) Away Team goals for 2014 world cup final
 
+console.log('task 1 d: ', fifaYear2014Filter[0]['Away Team Goals']);
+
 //(e) Winner of 2014 world cup final */
+
+console.log('task 1 e: ', fifaYear2014Filter[0]['Win conditions'])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -109,9 +115,11 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
+//can also solve with arrow functions
+
 function getWinnersByYear(/*data, getYearsCB, getWinnersCB*/) {
-    // const winners = getWinners(data, getFinals);
-    // const years = getYears(data, getFinals);
+    // const winners = getWinnersCB(data, getFinals);
+    // const years = getYearsCB(data, getFinals);
 
     // return winners.map(function(item, index){
     //     return `In ${years[index]}, ${item} won the world cup!`;
